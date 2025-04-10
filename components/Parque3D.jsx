@@ -1,22 +1,25 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+
+const Model = ({ path }) => {
+  const [model, setModel] = React.useState(null);
+
+  React.useEffect(() => {
+    new GLTFLoader().load(path, setModel);
+  }, [path]);
+
+  return model ? <primitive object={model.scene} /> : null;
+};
 
 export default function Parque3D({ modelPath }) {
   return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <Suspense fallback={null}>
-        <Model modelPath={modelPath} />
-        <Environment preset="studio" />
-      </Suspense>
-      <OrbitControls />
-    </Canvas>
+    <div style={{ height: '500px', width: '100%' }}>
+      <Canvas>
+        <Suspense fallback={<div>Loading Model...</div>}>
+          <Model path={modelPath} />
+        </Suspense>
+      </Canvas>
+    </div>
   );
-}
-
-function Model({ modelPath }) {
-  const gltf = useLoader(GLTFLoader, modelPath);
-  return <primitive object={gltf.scene} />;
 }
