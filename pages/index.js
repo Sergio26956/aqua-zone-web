@@ -7,68 +7,50 @@ export default function Home() {
   const sections = [
     {
       title: "Parques Terrestres",
-      items: [
-        {
-          name: "KAMIKAZE JUMP",
-          description:
-            "Vive la adrenalina con nuestros saltos Kamikaze, diseñados para los amantes de la emoción.",
-        },
-        {
-          name: "PARQUE ACUÁTICO URBANO MÓVIL",
-          description:
-            "Disfruta de un parque acuático donde quieras, con nuestra experiencia móvil única.",
-        },
-      ],
+      description: "Vive la aventura en tierra firme con nuestras atracciones emocionantes.",
+      image: "/images/terrestre.jpg",
     },
     {
       title: "Parques Flotantes",
-      items: [
-        {
-          name: "Playas",
-          description:
-            "Relájate en nuestras playas flotantes diseñadas para disfrutar del sol y el agua como nunca antes.",
-        },
-        {
-          name: "Piscinas",
-          description:
-            "Descubre nuestras piscinas flotantes ideales para refrescarte y relajarte.",
-        },
-      ],
+      description: "Explora nuestras increíbles estructuras flotantes en playas y piscinas.",
+      image: "/images/flotante.jpg",
     },
   ];
 
   return (
-    <div>
+    <div className="bg-gray-100">
       <NavBar />
-      <main className="container mx-auto p-8">
-        {/* Hero Section */}
-        <section className="mt-12 text-center">
-          <h1 className="text-4xl font-bold text-blue-600 mb-6">
-            ¡Bienvenido a AQUA-ZONE!
-          </h1>
-          <p className="text-lg text-gray-700 mt-4">
-            Explora los parques más increíbles y vive aventuras inolvidables.
+      {/* Hero Section */}
+      <header className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('/images/hero.jpg')" }}>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+          <h1 className="text-5xl font-bold text-white mb-4">AQUAZONE</h1>
+          <p className="text-xl text-white mb-6">
+            ¡Descubre la magia de nuestros parques acuáticos terrestres y flotantes!
           </p>
-        </section>
+          <a
+            href="#main-content"
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+          >
+            Explorar
+          </a>
+        </div>
+      </header>
+      {/* Main Content */}
+      <main id="main-content" className="container mx-auto p-8">
         {sections.map((section, index) => (
-          <section key={index} className="mt-12">
-            <h2 className="text-3xl font-bold text-blue-600 mb-6">
-              {section.title}
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {section.items.map((item, i) => (
-                <div
-                  key={i}
-                  className="bg-yellow-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                >
-                  <h3 className="text-2xl font-bold text-blue-800">
-                    {item.name}
-                  </h3>
-                  <p className="text-gray-700 mt-2">{item.description}</p>
-                </div>
-              ))}
+          <div key={index} className="my-12 flex flex-col md:flex-row items-center">
+            <img src={section.image} alt={section.title} className="w-full md:w-1/2 rounded-lg shadow-lg" />
+            <div className="md:ml-8 mt-4 md:mt-0">
+              <h2 className="text-3xl font-bold text-blue-800">{section.title}</h2>
+              <p className="text-lg text-gray-700 mt-2">{section.description}</p>
+              <a
+                href="#"
+                className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
+              >
+                Más información →
+              </a>
             </div>
-          </section>
+          </div>
         ))}
       </main>
       <Footer />
