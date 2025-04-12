@@ -1,81 +1,47 @@
-import React from "react";
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-import WhatsAppButton from "../components/WhatsAppButton";
-import SocialMedia from "../components/SocialMedia";
+import Link from "next/link";
 
 export default function Home() {
-  const sections = [
-    {
-      title: "Parques Terrestres",
-      description: "Vive la aventura en tierra firme con nuestras atracciones emocionantes.",
-      image: "/images/terrestre.jpg",
-      link: "/terrestres",
-    },
-    {
-      title: "Parques Flotantes",
-      description: "Explora nuestras increíbles estructuras flotantes en playas y piscinas.",
-      image: "/images/flotante.jpg",
-      link: "/flotantes",
-    },
-  ];
-
   return (
-    <div className="bg-gray-100">
-      <NavBar />
-      {/* Hero Section */}
-      <header className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('/images/hero.mp4')" }}>
-        <video
-          autoPlay
-          loop
-          muted
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-bold text-white mb-4">AQUAZONE</h1>
-          <p className="text-xl text-white mb-6">
-            ¡Descubre la magia de nuestros parques acuáticos terrestres y flotantes!
-          </p>
-          <a
-            href="#main-content"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
-          >
-            Explorar
-          </a>
-        </div>
-      </header>
-      {/* Main Content */}
-      <main id="main-content" className="container mx-auto p-8">
-        {sections.map((section, index) => (
-          <div
-            key={index}
-            className="my-12 flex flex-col md:flex-row items-center"
-          >
-            <img
-              src={section.image}
-              alt={section.title}
-              className="w-full md:w-1/2 rounded-lg shadow-lg"
-            />
-            <div className="md:ml-8 mt-4 md:mt-0">
-              <h2 className="text-3xl font-bold text-blue-800">
-                {section.title}
-              </h2>
-              <p className="text-lg text-gray-700 mt-2">{section.description}</p>
-              <a
-                href={section.link}
-                className="text-blue-600 hover:text-blue-800 mt-4 inline-block"
-              >
-                Más información →
-              </a>
+    <div className="bg-gray-100 min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-5xl font-bold text-blue-600 mb-10">
+        Bienvenido a AQUAZONE
+      </h1>
+      <div className="flex space-x-8">
+        {/* Botón para Parques Acuáticos Terrestres */}
+        <Link href="/terrestres">
+          <a className="relative group">
+            <div
+              className="w-72 h-48 bg-cover bg-center rounded-lg shadow-lg"
+              style={{
+                backgroundImage: "url('/images/terrestre.jpg')",
+              }}
+            >
+              <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
+                <span className="text-white text-2xl font-bold">
+                  Parques Acuáticos Terrestres
+                </span>
+              </div>
             </div>
-          </div>
-        ))}
-      </main>
-      <SocialMedia />
-      <Footer />
-      <WhatsAppButton />
+          </a>
+        </Link>
+        {/* Botón para Parques Acuáticos Flotantes */}
+        <Link href="/flotantes">
+          <a className="relative group">
+            <div
+              className="w-72 h-48 bg-cover bg-center rounded-lg shadow-lg"
+              style={{
+                backgroundImage: "url('/images/flotante.jpg')",
+              }}
+            >
+              <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
+                <span className="text-white text-2xl font-bold">
+                  Parques Acuáticos Flotantes
+                </span>
+              </div>
+            </div>
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
