@@ -8,7 +8,7 @@ export default function Terrestres() {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Subsección Kamikaze Jump */}
-        <Link href="/subsecciones/kamikaze">
+        <Link href="/subsecciones/kamikaze-jump">
           <a className="relative group">
             <div
               className="w-full h-64 bg-cover bg-center rounded-lg shadow-lg"
@@ -18,23 +18,25 @@ export default function Terrestres() {
             >
               <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
                 <span className="text-white text-2xl font-bold">
-                  Kamikaze Jump
+                  KAMIKAZE JUMP
                 </span>
               </div>
             </div>
           </a>
         </Link>
-        {/* Subsección Piscina */}
-        <Link href="/subsecciones/piscina">
+        {/* Subsección Parque Acuático Urbano Móvil */}
+        <Link href="/subsecciones/urbanos-moviles">
           <a className="relative group">
             <div
               className="w-full h-64 bg-cover bg-center rounded-lg shadow-lg"
               style={{
-                backgroundImage: "url('/images/piscina.jpg')",
+                backgroundImage: "url('/images/urbano.jpg')",
               }}
             >
               <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
-                <span className="text-white text-2xl font-bold">Piscina</span>
+                <span className="text-white text-2xl font-bold">
+                  PARQUE ACUÁTICO URBANO MÓVIL
+                </span>
               </div>
             </div>
           </a>
