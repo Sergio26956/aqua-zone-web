@@ -15,14 +15,16 @@ export default function Piscinas() {
         <h2 className="text-2xl font-semibold text-blue-500 mb-4">
           Video de Ejemplo
         </h2>
-        <video
-          controls
-          className="w-full rounded-lg shadow-lg"
-          src="/videos/ejemplo-piscinas.mp4"
-          alt="Video ejemplo de piscinas flotantes"
-        >
-          Tu navegador no soporta el elemento de video.
-        </video>
+        <iframe
+          width="100%"
+          height="400"
+          src="https://www.youtube.com/embed/tvwinDfxd9c"
+          title="Video ejemplo de piscinas flotantes"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="rounded-lg shadow-lg"
+        ></iframe>
       </div>
       {/* Galería de Imágenes */}
       <div>
