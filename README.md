@@ -11,3 +11,4 @@ Página web oficial de AQUA-ZONE, el parque acuático más innovador.
 ```bash
 npm install
 npm run dev
+```
