@@ -1,47 +1,39 @@
-import Link from "next/link";
+import React from 'react';
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../styles/Sections.module.css';
 
 export default function Terrestres() {
   return (
-    <div className="bg-gray-100 min-h-screen p-8">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">
-        Parques Acuáticos Terrestres
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Subsección Kamikaze Jump */}
-        <Link href="/subsecciones/kamikaze-jump">
-          <a className="relative group">
-            <div
-              className="w-full h-64 bg-cover bg-center rounded-lg shadow-lg"
-              style={{
-                backgroundImage: "url('/images/kamikaze.jpg')",
-              }}
-            >
-              <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
-                <span className="text-white text-2xl font-bold">
-                  KAMIKAZE JUMP
-                </span>
-              </div>
-            </div>
-          </a>
+    <div className={styles.container}>
+      <Head>
+        <title>Parques Acuáticos Terrestres | Aquazone Waterpark</title>
+        <meta name="description" content="Descubre los mejores parques acuáticos terrestres en Aquazone Waterpark. Diversión garantizada para toda la familia." />
+      </Head>
+
+      <header className={styles.header}>
+        <h1>Parques Acuáticos Terrestres</h1>
+        <p>¡Explora nuestras increíbles atracciones terrestres y vive la mejor experiencia acuática!</p>
+      </header>
+
+      <main className={styles.main}>
+        {/* Lista de atracciones */}
+        <section className={styles.attractions}>
+          <div className={styles.attractionCard}>
+            <h3>Río Lento</h3>
+            <p>Relájate mientras flotas por un río tranquilo rodeado de naturaleza.</p>
+          </div>
+          <div className={styles.attractionCard}>
+            <h3>Toboganes Gigantes</h3>
+            <p>Desciende a toda velocidad por nuestros toboganes más altos y emocionantes.</p>
+          </div>
+        </section>
+
+        {/* Enlace para volver */}
+        <Link href="/">
+          <a className={styles.backButton}>Volver al Inicio</a>
         </Link>
-        {/* Subsección Parque Acuático Urbano Móvil */}
-        <Link href="/subsecciones/urbanos-moviles">
-          <a className="relative group">
-            <div
-              className="w-full h-64 bg-cover bg-center rounded-lg shadow-lg"
-              style={{
-                backgroundImage: "url('/images/urbano.jpg')",
-              }}
-            >
-              <div className="absolute inset-0 bg-blue-600 bg-opacity-50 flex items-center justify-center rounded-lg group-hover:bg-opacity-70 transition duration-300">
-                <span className="text-white text-2xl font-bold">
-                  PARQUE ACUÁTICO URBANO MÓVIL
-                </span>
-              </div>
-            </div>
-          </a>
-        </Link>
-      </div>
+      </main>
     </div>
   );
 }
