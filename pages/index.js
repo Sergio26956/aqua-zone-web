@@ -1,40 +1,44 @@
-import Link from "next/link";
-import VideoBackground from "../components/VideoBackground";
-import ThemeToggle from "../components/ThemeToggle";
-import LanguageSwitcher from "../components/LanguageSwitcher";
+import React from 'react';
+import Navbar from './Navbar';
+import './globals.css';
 
-export default function Home() {
+const App = () => {
   return (
-    <div className="relative min-h-screen bg-gray-100">
-      {/* Video de Fondo */}
-      <VideoBackground />
-
-      {/* Controles de Tema e Idioma */}
-      <div className="absolute top-4 right-4 flex space-x-4">
-        <ThemeToggle />
-        <LanguageSwitcher />
-      </div>
-
-      {/* Contenido Principal */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center">
-        <h1 className="text-5xl font-bold text-white mb-10 drop-shadow-lg">
-          Bienvenido a AQUAZONE
-        </h1>
-        <div className="flex space-x-8">
-          {/* Botón para Parques Acuáticos Terrestres */}
-          <Link href="/terrestres">
-            <a className="bg-blue-600 text-white rounded-lg px-6 py-3 shadow-lg hover:bg-blue-700 transition duration-300">
-              PARQUES ACUÁTICOS TERRESTRES
-            </a>
-          </Link>
-          {/* Botón para Parques Acuáticos Flotantes */}
-          <Link href="/flotantes">
-            <a className="bg-blue-600 text-white rounded-lg px-6 py-3 shadow-lg hover:bg-blue-700 transition duration-300">
-              PARQUES ACUÁTICOS FLOTANTES
-            </a>
-          </Link>
-        </div>
-      </div>
+    <div>
+      <Navbar />
+      <header style={styles.header}>
+        <h1 style={styles.title}>Bienvenido a AquaZone</h1>
+        <p style={styles.subtitle}>Explora lo mejor del mundo acuático con un diseño que te dejará sin palabras.</p>
+        <button style={styles.ctaButton}>Explorar Ahora</button>
+      </header>
     </div>
   );
-}
+};
+
+const styles = {
+  header: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    textAlign: 'center',
+    backgroundImage: 'url("https://source.unsplash.com/1600x900/?water,blue")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    color: '#fff',
+  },
+  title: {
+    fontSize: '3rem',
+    marginBottom: '1rem',
+  },
+  subtitle: {
+    fontSize: '1.5rem',
+    marginBottom: '2rem',
+  },
+  ctaButton: {
+    ...globals.button,
+  },
+};
+
+export default App;
