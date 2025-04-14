@@ -1,15 +1,41 @@
+/* Estilos Globales - Diseño Avanzado */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@300;900&display=swap');
+
+:root {
+  --primary-color: #00b4d8; /* Azul vibrante */
+  --secondary-color: #03045e; /* Azul oscuro */
+  --accent-color: #ff6f61; /* Rojo coral */
+  --background-color: #001233; /* Fondo oscuro */
+  --text-color: #ffffff; /* Texto blanco */
+}
+
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(180deg, var(--background-color), var(--primary-color));
+  color: var(--text-color);
+  overflow-x: hidden;
 }
-a {
-  text-decoration: none;
-  color: inherit;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 15px;
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
