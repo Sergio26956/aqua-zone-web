@@ -13,8 +13,11 @@ export default function Footer() {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
             <img src="/icons/instagram.svg" alt="Instagram" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-            <img src="/icons/twitter.svg" alt="Twitter" />
+          <a href="https://wa.me/34649002658" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/whatsapp.svg" alt="WhatsApp" />
+          </a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
+            <img src="/icons/tiktok.svg" alt="TikTok" />
           </a>
         </div>
       </div>
