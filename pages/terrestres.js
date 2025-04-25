@@ -7,8 +7,8 @@ export default function Terrestres() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Parques Acuáticos Terrestres | Aquazone Waterpark</title>
-        <meta name="description" content="Descubre los mejores parques acuáticos terrestres en Aquazone Waterpark. Diversión garantizada para toda la familia." />
+        <title>Parques Acuáticos Terrestres | Aqua Zone</title>
+        <meta name="description" content="Atracciones terrestres en Aqua Zone." />
       </Head>
 
       <header className={styles.header}>
@@ -17,7 +17,6 @@ export default function Terrestres() {
       </header>
 
       <main className={styles.main}>
-        {/* Lista de atracciones */}
         <section className={styles.attractions}>
           <div className={styles.attractionCard}>
             <h3>Río Lento</h3>
@@ -29,7 +28,6 @@ export default function Terrestres() {
           </div>
         </section>
 
-        {/* Enlace para volver */}
         <Link href="/">
           <a className={styles.backButton}>Volver al Inicio</a>
         </Link>
