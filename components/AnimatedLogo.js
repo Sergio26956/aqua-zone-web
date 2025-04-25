@@ -4,8 +4,8 @@ import { OrbitControls, Html } from '@react-three/drei';
 
 function Logo() {
   return (
-    <mesh>
-      {/* Logo en 3D */}
+    <mesh rotation={[Math.PI / 4, Math.PI / 4, 0]}>
+      {/* Logo en 3D con rotación */}
       <boxGeometry args={[3, 1, 1]} />
       <meshStandardMaterial color="orange" />
       <Html position={[0, 1, 0]}>
