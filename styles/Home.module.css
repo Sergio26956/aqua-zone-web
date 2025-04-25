@@ -1,61 +1,26 @@
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  overflow: hidden;
-}
+import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Attractions from '../components/Attractions';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import SocialButtons from '../components/SocialButtons';
 
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 20px;
-}
-
-.sectionButton {
-  padding: 15px 30px;
-  font-size: 18px;
-  color: white;
-  background: #0072ff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.sectionButton:hover {
-  background: #005bb5;
-}
-
-.animatedBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2NwczRkbjU5aXgzM2hsZWJrZWoxdzk3bHZmZ3lvOGJuczZ2ZXI5ciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0Iyftjqqu1CDhDZS/giphy.gif') no-repeat center center/cover;
-  opacity: 0.8;
-  animation: moveBackground 20s linear infinite;
-}
-
-@keyframes moveBackground {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Aqua Zone - Innovación y Diversión</title>
+        <meta name="description" content="El parque acuático más avanzado del mundo." />
+        <meta name="keywords" content="parque acuático, innovación, diversión, tecnología" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <Navbar />
+      <Hero />
+      <Attractions />
+      <Contact />
+      <Footer />
+      <SocialButtons />
+    </>
+  );
 }
