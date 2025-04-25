@@ -6,8 +6,17 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: #f9f9f9;
   color: #333;
+  line-height: 1.6;
 }
 
 a {
   transition: all 0.3s ease-in-out;
+}
+
+button {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
 }
