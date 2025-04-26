@@ -5,6 +5,7 @@ import Attractions from '../components/Attractions';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SocialButtons from '../components/SocialButtons';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -16,7 +17,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Navbar />
-      <Hero />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        <Hero />
+      </motion.div>
       <Attractions />
       <Contact />
       <Footer />
