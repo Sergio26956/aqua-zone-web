@@ -1,26 +1,41 @@
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Attractions from '../components/Attractions';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import SocialButtons from '../components/SocialButtons';
+.hero {
+  background-image: url('/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 60px var(--spacing);
+  text-align: center;
+}
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>Aqua Zone - Innovación y Diversión</title>
-        <meta name="description" content="El parque acuático más avanzado del mundo." />
-        <meta name="keywords" content="parque acuático, innovación, diversión, tecnología" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Navbar />
-      <Hero />
-      <Attractions />
-      <Contact />
-      <Footer />
-      <SocialButtons />
-    </>
-  );
+.hero h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-top: var(--spacing);
+}
+
+.hero button {
+  margin-top: var(--spacing);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing);
+  margin-top: var(--spacing);
+}
+
+.features .feature {
+  background-color: #fff;
+  padding: var(--spacing);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.features .feature h3 {
+  color: var(--color-primary);
 }
