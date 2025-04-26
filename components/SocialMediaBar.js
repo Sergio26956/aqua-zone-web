@@ -8,7 +8,17 @@ export default function SocialMediaBar() {
   ];
 
   return (
-    <div style={{ position: "fixed", bottom: "20px", left: "20px", zIndex: 1000, display: "flex", flexDirection: "column", gap: "10px" }}>
+    <div
+      style={{
+        position: "fixed",
+        bottom: "20px",
+        left: "20px",
+        zIndex: 1000,
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+      }}
+    >
       {icons.map((icon, index) => (
         <a
           key={index}
