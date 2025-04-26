@@ -1,12 +1,17 @@
 import React from 'react';
-import './globals.css';
 
 const SocialAndCallButtons = () => {
   return (
     <div style={styles.container}>
-      <button style={styles.button}><i className="fab fa-facebook"></i> Facebook</button>
-      <button style={styles.button}><i className="fab fa-instagram"></i> Instagram</button>
-      <button style={styles.button}><i className="fas fa-phone"></i> Llamar</button>
+      <button style={styles.button}>
+        <i className="fab fa-facebook"></i> Facebook
+      </button>
+      <button style={styles.button}>
+        <i className="fab fa-instagram"></i> Instagram
+      </button>
+      <button style={styles.button}>
+        <i className="fas fa-phone"></i> Llamar
+      </button>
     </div>
   );
 };
@@ -18,8 +23,15 @@ const styles = {
     margin: '20px 0',
   },
   button: {
-    ...globals.button,
+    backgroundColor: '#007bff',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
     margin: '0 10px',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    cursor: 'pointer',
+    transition: 'transform 0.3s ease',
   },
 };
 
