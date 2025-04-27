@@ -1,8 +1,8 @@
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-600 text-white py-8">
+    <footer className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 text-center">
         <p className="mb-4">&copy; 2025 Aqua Zone. Todos los derechos reservados.</p>
         <div className="flex justify-center space-x-6">
@@ -32,6 +32,15 @@ export default function Footer() {
             className="hover:text-gray-300"
           >
             <FaTwitter size={24} />
+          </a>
+          <a
+            href="https://www.youtube.com/aquazone"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube de Aqua Zone"
+            className="hover:text-gray-300"
+          >
+            <FaYoutube size={24} />
           </a>
         </div>
       </div>
