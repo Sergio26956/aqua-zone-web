@@ -1,33 +1,37 @@
-import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Attractions from '../components/Attractions';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
-import SocialButtons from '../components/SocialButtons';
-import { motion } from 'framer-motion';
+import Head from "next/head";
+import VideoBackground from "../components/VideoBackground";
+import AnimatedLogo from "../components/AnimatedLogo";
+import SocialButtons from "../components/SocialButtons";
+import SocialMediaBar from "../components/SocialMediaBar";
 
 export default function Home() {
   return (
-    <>
+    <div className="relative h-screen overflow-hidden">
       <Head>
-        <title>Aqua Zone - Innovación y Diversión</title>
-        <meta name="description" content="El parque acuático más avanzado del mundo." />
-        <meta name="keywords" content="parque acuático, innovación, diversión, tecnología" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Aqua Zone - La experiencia más impresionante</title>
+        <meta
+          name="description"
+          content="Bienvenido a Aqua Zone, donde la innovación y el diseño se encuentran para crear una experiencia inolvidable."
+        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
-      >
-        <Hero />
-      </motion.div>
-      <Attractions />
-      <Contact />
-      <Footer />
+
+      {/* Fondo hiperrealista */}
+      <VideoBackground />
+
+      {/* Logo animado */}
+      <AnimatedLogo
+        imageUrl="/images/logo.webp"
+        altText="Aqua Zone Logo"
+        config={{ rotation: 270, duration: 3 }}
+        theme="auto"
+      />
+
+      {/* Botones flotantes de redes sociales */}
       <SocialButtons />
-    </>
+
+      {/* Barra lateral de redes sociales */}
+      <SocialMediaBar />
+    </div>
   );
 }
