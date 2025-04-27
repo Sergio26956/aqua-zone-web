@@ -1,134 +1,17 @@
-/* styles/globals.css */
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Footer from '../components/Footer';
+import SEO from '../components/SEO';
+import '../styles/globals.css';
 
-/* Variables CSS */
-:root {
-  --color-primary: #00b4d8; /* Azul Aqua */
-  --color-secondary: #0077b6; /* Azul más oscuro */
-  --color-background: #f0f0f0; /* Fondo claro */
-  --color-text: #343a40; /* Texto oscuro */
-  --font-family: "Poppins", Arial, sans-serif; /* Fuente moderna */
-  --spacing: 16px; /* Espaciado base */
-}
-
-/* Reset Global */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--font-family);
-  background-color: var(--color-background);
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  padding: var(--spacing);
-  scroll-behavior: smooth;
-}
-
-/* Tipografía */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-family);
-  margin-bottom: var(--spacing);
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: var(--color-primary);
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 2rem;
-  color: var(--color-secondary);
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: var(--spacing);
-}
-
-/* Enlaces */
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Botones */
-button {
-  background-color: var(--color-primary);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--color-secondary);
-}
-
-/* Contenedores */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing);
-}
-
-.flex {
-  display: flex;
-  gap: var(--spacing);
-}
-
-.grid {
-  display: grid;
-  gap: var(--spacing);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Espaciado */
-.mt-1 {
-  margin-top: var(--spacing);
-}
-
-.mb-1 {
-  margin-bottom: var(--spacing);
-}
-
-.pt-1 {
-  padding-top: var(--spacing);
-}
-
-.pb-1 {
-  padding-bottom: var(--spacing);
-}
-
-/* Utilidades */
-.shadow {
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.rounded {
-  border-radius: 8px;
+export default function App({ Component, pageProps }) {
+  return (
+    <>
+      <SEO title="Inicio" description="Descubre AQUAZONE y vive la mejor experiencia acuática" />
+      <Navbar />
+      <Hero />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }
