@@ -1,39 +1,34 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative h-screen bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/hero.jpg)' }}
-    >
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center">
+    <section className="relative bg-cover bg-center h-screen" style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}>
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4">
         <motion.h1
-          className="text-white text-6xl font-bold"
-          aria-label="Bienvenidos a Aqua Zone"
+          className="text-5xl md:text-7xl font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          ¡Bienvenidos a Aqua Zone!
+          ¡Bienvenido a Aqua Zone!
         </motion.h1>
         <motion.p
-          className="text-white text-xl mt-4"
+          className="text-lg md:text-2xl mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          El parque acuático más avanzado del mundo.
+          Donde la innovación y la diversión se encuentran.
         </motion.p>
         <motion.a
-          href="#attractions"
-          className="mt-6 px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-transform transform hover:scale-110"
-          aria-label="Descubre más sobre Aqua Zone"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          href="#contact"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          Descubre Más
+          Contáctanos
         </motion.a>
       </div>
     </section>
