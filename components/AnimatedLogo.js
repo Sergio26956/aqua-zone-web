@@ -6,22 +6,20 @@ const AnimatedLogo = ({
   imageUrl = '/images/logo.webp',
   altText = 'Logo Animado',
   config = {},
-  theme = 'auto', // Nuevo: Soporte para temas (auto, light, dark)
+  theme = 'auto',
 }) => {
   const logoRef = useRef(null);
 
-  // Configuración predeterminada de animación
   const defaultConfig = {
     opacity: 0,
     scale: 0.5,
     rotation: 360,
     duration: 2,
     ease: 'power4.out',
-    hoverScale: 1.1, // Nuevo: Escala en hover
-    ...config, // Permite sobreescribir valores predeterminados
+    hoverScale: 1.1,
+    ...config,
   };
 
-  // Determinar tema (oscuro o claro)
   const getThemeBackground = () => {
     if (theme === 'auto') {
       return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -34,7 +32,6 @@ const AnimatedLogo = ({
   };
 
   useEffect(() => {
-    // Animación inicial
     gsap.fromTo(
       logoRef.current,
       { opacity: defaultConfig.opacity, scale: defaultConfig.scale },
@@ -47,27 +44,17 @@ const AnimatedLogo = ({
       }
     );
 
-    // Añadir efecto de hover dinámico
     const logoElement = logoRef.current;
     const handleMouseEnter = () => {
-      gsap.to(logoElement, {
-        scale: defaultConfig.hoverScale,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
+      gsap.to(logoElement, { scale: defaultConfig.hoverScale, duration: 0.3, ease: 'power2.out' });
     };
     const handleMouseLeave = () => {
-      gsap.to(logoElement, {
-        scale: 1,
-        duration: 0.3,
-        ease: 'power2.out',
-      });
+      gsap.to(logoElement, { scale: 1, duration: 0.3, ease: 'power2.out' });
     };
 
     logoElement.addEventListener('mouseenter', handleMouseEnter);
     logoElement.addEventListener('mouseleave', handleMouseLeave);
 
-    // Cleanup de eventos
     return () => {
       logoElement.removeEventListener('mouseenter', handleMouseEnter);
       logoElement.removeEventListener('mouseleave', handleMouseLeave);
@@ -81,12 +68,11 @@ const AnimatedLogo = ({
         className="relative w-64 h-32 shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-500"
         style={{ perspective: '1000px' }}
       >
-        {/* Lazy-loading para optimizar rendimiento */}
         <img
           src={imageUrl}
           alt={altText}
           className="w-full h-full object-contain"
-          loading="lazy" // Nuevo: Lazy-loading
+          loading="lazy"
         />
       </div>
     </div>
@@ -94,10 +80,10 @@ const AnimatedLogo = ({
 };
 
 AnimatedLogo.propTypes = {
-  imageUrl: PropTypes.string, // URL dinámica para el logo
-  altText: PropTypes.string, // Texto alternativo para accesibilidad y SEO
-  config: PropTypes.object, // Configuración de la animación
-  theme: PropTypes.oneOf(['auto', 'light', 'dark']), // Nuevo: Tema del fondo
+  imageUrl: PropTypes.string,
+  altText: PropTypes.string,
+  config: PropTypes.object,
+  theme: PropTypes.oneOf(['auto', 'light', 'dark']),
 };
 
 export default AnimatedLogo;
