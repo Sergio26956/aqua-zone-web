@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import styles from '../styles/NavBar.module.css'; // Importa el archivo CSS modular
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,23 +13,23 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-md fixed w-full z-50">
+    <nav className={`${styles.navbar} bg-white dark:bg-gray-900 shadow-md fixed w-full z-50`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/">
-              <a className="text-2xl font-bold text-blue-500 dark:text-blue-300">Aqua Zone</a>
+              <a className={styles.logo}>Aqua Zone</a>
             </Link>
           </div>
           <div className="hidden md:flex space-x-4">
             <Link href="/about">
-              <a className="hover:text-blue-500 dark:hover:text-blue-300">Sobre Nosotros</a>
+              <a className={styles.link}>Sobre Nosotros</a>
             </Link>
             <Link href="/services">
-              <a className="hover:text-blue-500 dark:hover:text-blue-300">Servicios</a>
+              <a className={styles.link}>Servicios</a>
             </Link>
             <Link href="/contact">
-              <a className="hover:text-blue-500 dark:hover:text-blue-300">Contacto</a>
+              <a className={styles.link}>Contacto</a>
             </Link>
           </div>
           <div className="flex items-center">
@@ -66,19 +67,13 @@ export default function Navbar() {
         <div className="md:hidden bg-white dark:bg-gray-900 shadow-md">
           <div className="px-4 py-2 space-y-2">
             <Link href="/about">
-              <a className="block text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-300">
-                Sobre Nosotros
-              </a>
+              <a className={styles.mobileLink}>Sobre Nosotros</a>
             </Link>
             <Link href="/services">
-              <a className="block text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-300">
-                Servicios
-              </a>
+              <a className={styles.mobileLink}>Servicios</a>
             </Link>
             <Link href="/contact">
-              <a className="block text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-300">
-                Contacto
-              </a>
+              <a className={styles.mobileLink}>Contacto</a>
             </Link>
           </div>
         </div>
