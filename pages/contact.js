@@ -1,4 +1,4 @@
-import NavBar from '../components/NavBar';
+import Navbar from '../components/Navbar';
 import dynamic from 'next/dynamic';
 
 const Map = dynamic(() => import('../components/Map'), { ssr: false });
@@ -6,7 +6,7 @@ const Map = dynamic(() => import('../components/Map'), { ssr: false });
 export default function Contact() {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <main className="px-6 py-12">
         <h1 className="text-4xl font-bold mb-4 text-center">Contáctanos</h1>
         <form className="max-w-lg mx-auto">
