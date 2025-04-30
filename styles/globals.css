@@ -1,17 +1,32 @@
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Footer from '../components/Footer';
-import SEO from '../components/SEO';
-import '../styles/globals.css';
+/* Estilos globales para Aqua Zone */
 
-export default function App({ Component, pageProps }) {
-  return (
-    <>
-      <SEO title="Inicio" description="Descubre AQUAZONE y vive la mejor experiencia acuática" />
-      <Navbar />
-      <Hero />
-      <Component {...pageProps} />
-      <Footer />
-    </>
-  );
+/* Reinicio básico de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
